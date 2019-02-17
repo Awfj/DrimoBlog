@@ -1,0 +1,46 @@
+header {
+  border: 1px solid red;
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+ul {
+  a {
+    border: 1px solid #000;
+    display: block;
+    width: 100%;
+    padding: 1em;
+  }
+}
+
+.desktop {
+  li {
+    display: inline-block;
+  }
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: .7em 0;
+  img {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .logo {
+    justify-self: start;
+    padding: 0;
+  }
+  ul {
+    justify-self: end;
+  }
+}

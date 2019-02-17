@@ -1,0 +1,17 @@
+<header class="generic-container" (window:resize)="onResize($event)">
+  <a href="#" class="logo"><img src="../../assets/images/logo.png" alt="" /></a>
+
+  <ul class="mobile" *ngIf="mobile; else desktop">
+    <li><a href="">HOME</a></li>
+    <li><a href="">FEATURES</a></li>
+    <li><a href="">ABOUT</a></li>
+  </ul>
+
+  <ng-template #desktop>
+    <ul class="desktop">
+      <li><a href="">HOME</a></li>
+      <li><a href="">FEATURES</a></li>
+      <li><a href="">ABOUT</a></li>
+    </ul>
+  </ng-template>
+</header>
