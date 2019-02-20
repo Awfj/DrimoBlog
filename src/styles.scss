@@ -18,6 +18,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  background-color: white;
+  border: none;
+  padding: 0;
+}
+
 h1, h2, h3, h4, h5, h6, p, ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -26,4 +32,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
 ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+.active {
+  background-color: red;
 }

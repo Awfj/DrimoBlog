@@ -1,0 +1,33 @@
+form {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  border: 1px solid #000;
+  padding: 16px;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+label {
+  margin-bottom: .5em;
+}
+
+input:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+button {
+  border: 1px solid #000;
+  padding: .5em 5em;
+  margin: 2em 0 1em;
+}
