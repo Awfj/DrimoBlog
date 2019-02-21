@@ -1,0 +1,12 @@
+<article *ngIf="article">
+  <h2>{{ article.title }}</h2>
+  <img
+    src="{{ article.image.path }}"
+    alt=""
+    width="{{ article.image.width }}"
+    height="{{ article.image.height }}"
+  />
+  <p>{{ article.preview }}</p>
+</article>
+
+<button type="button" (click)="goBack()">Go Back</button>

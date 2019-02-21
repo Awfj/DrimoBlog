@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostListener } from "@angular/core";
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,17 +20,25 @@ export class HeaderComponent implements OnInit {
   }
 
   checkWindowInnerWidth():void {
-    if(window.innerWidth > 768) {
-      this.mobile = false;
-      this.desktop = true;
-    } else {
-      this.mobile = true;
-      this.desktop = false;
-    }
+    this.checkInnerWidth();
   }
 
-  onResize(event):void {
-    if(event.target.innerWidth > 768) {
+  onResize():void {
+    this.checkInnerWidth();
+  }
+
+  // onResize(event):void {
+  //   if(event.target.innerWidth > 768) {
+  //     this.mobile = false;
+  //     this.desktop = true;
+  //   } else {
+  //     this.mobile = true;
+  //     this.desktop = false;
+  //   }
+  // }
+
+  checkInnerWidth() {
+    if(window.innerWidth > 768) {
       this.mobile = false;
       this.desktop = true;
     } else {

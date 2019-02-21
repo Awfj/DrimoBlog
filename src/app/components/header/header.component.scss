@@ -1,7 +1,7 @@
 header {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
   border: 1px solid red;
   max-width: 1140px;

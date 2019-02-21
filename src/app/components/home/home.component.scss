@@ -1,0 +1,40 @@
+main {
+  padding: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  display: grid;
+  justify-items: center;
+  grid-gap: 1em;
+  article {
+    border: 1px solid #000;
+    padding: 4px;
+    max-width: 368px;
+  }
+  div {
+    display: grid;
+    padding: 1em .5em 1em;
+  }
+}
+
+p {
+  margin-top: 1em;
+}
+
+a {
+  margin-top: 1em;
+  justify-self: start;
+  border: 1px solid #000;
+  padding: .5em 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
