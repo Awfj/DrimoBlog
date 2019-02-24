@@ -65,7 +65,7 @@ p {
   border: 1px solid #000;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   header {
     align-items: center;
   }

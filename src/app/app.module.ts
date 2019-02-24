@@ -18,6 +18,7 @@ import { ArticleDetailsComponent } from './components/article-details/article-de
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { ArticleComponent } from './components/article/article.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ArticleComponent } from './components/article/article.component';
     ArticleDetailsComponent,
     PageNotFoundComponent,
     AsideComponent,
-    ArticleComponent
+    ArticleComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

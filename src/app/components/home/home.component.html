@@ -1,21 +1,15 @@
-<div class="container">
-  <main>
-    <div class="articles">
-      <article *ngFor="let article of articles">
-        <img
-          src="{{ article.image.path }}"
-          alt=""
-          width="{{ article.image.width }}"
-          height="{{ article.image.height }}"
-        />
-        <div class="article__info">
-          <h2>{{ article.title }}</h2>
-          <p>{{ article.preview }}</p>
-          <a routerLink="/details/{{ article.id }}">Read More</a>
-        </div>
-      </article>
+<div class="articles">
+  <article *ngFor="let article of articles">
+    <img
+      src="{{ article.image.path }}"
+      alt=""
+      width="{{ article.image.width }}"
+      height="{{ article.image.height }}"
+    />
+    <div class="article__info">
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.preview }}</p>
+      <a routerLink="/details/{{ article.id }}">Read More</a>
     </div>
-  </main>
-
-  <app-aside></app-aside>
+  </article>
 </div>
