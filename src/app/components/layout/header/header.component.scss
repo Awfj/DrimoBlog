@@ -1,4 +1,4 @@
-header {
+.wrapper {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -14,10 +14,10 @@ header {
   justify-self: start;
   margin-top: .7em;
   margin-bottom: .7em;
-  border: 1px solid #000;
-  img {
+  svg {
+    width: 111px;
+    height: 40px;
     display: block;
-    border: 1px solid blue;
   }
 }
 
@@ -83,5 +83,11 @@ p {
     a {
       border: 1px solid red;
     }
+  }
+}
+
+@media (min-width: 1172px) {
+  .wrapper {
+    padding: 0;
   }
 }

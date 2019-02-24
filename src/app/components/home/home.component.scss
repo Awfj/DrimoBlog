@@ -32,5 +32,6 @@ a {
 @media (min-width: 768px) {
   .articles {
     grid-template-columns: 1fr 1fr;
+    justify-items: start;
   }
 }
