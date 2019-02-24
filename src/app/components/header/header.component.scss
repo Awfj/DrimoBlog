@@ -30,21 +30,25 @@ header {
   display: block;
 }
 
-ul {
-  text-align: center;
+nav {
+  display: grid;
+  justify-items: center;
   position: absolute;
   top: 100%;
   width: 100%;
-  z-index: 1;
   background-color: white;
+  z-index: 1;
   border: 1px solid #000;
-  li:not(:last-child) {
-    border-bottom: 1px solid #000;
-  }
+  text-align: center;
+  // padding: 1em 0;
   a {
-    display: block;
-    width: 100%;
+    // border: 1px solid red;
+    justify-self: stretch;
     padding: 1em;
+    text-transform: uppercase;
+  }
+  a:not(:last-child) {
+    border: 1px solid red;
   }
 }
 
@@ -70,16 +74,14 @@ p {
     margin-top: 0;
     margin-bottom: 0;
   }
-  ul {
+  nav {
+    justify-self: end;
+    grid-auto-flow: column; 
     position: relative;
     top: initial;
     width: initial;
-    justify-self: end;
-    li:not(:last-child) {
-      border: none;
-    }
     a {
-      border: 1px solid #000;
+      border: 1px solid red;
     }
   }
 }

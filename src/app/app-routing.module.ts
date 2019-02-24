@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
+import { ArticleComponent } from './components/article/article.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'sign-up', component: SignUpComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'details/:id', component: ArticleDetailsComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'details/:id', component: ArticleComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

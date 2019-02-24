@@ -4,12 +4,11 @@
     <fa-icon [icon]="faBars" size="2x"></fa-icon>
   </button>
 
-  <ul [class.desktop]="desktop" *ngIf="isMenuOpen || desktop">
-    <li><a routerLink="/home" routerLinkActive="active">HOME</a></li>
-    <li><a href="#">FEATURES</a></li>
-    <li><a href="#">ABOUT</a></li>
-    <li><a routerLink="/sign-up" routerLinkActive="active">SIGN UP</a></li>
-  </ul>
+  <nav [class.desktop]="desktop" *ngIf="isMenuOpen || desktop">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a href="">About</a>
+    <a routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
+  </nav>
 
 </header>
 

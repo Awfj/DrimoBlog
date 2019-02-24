@@ -16,6 +16,8 @@ import { IdenticalPasswordsDirective } from './shared/directives/identical-passw
 import { HomeComponent } from './components/home/home.component';
 import { ArticleDetailsComponent } from './components/article-details/article-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AsideComponent } from './components/aside/aside.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     IdenticalPasswordsDirective,
     HomeComponent,
     ArticleDetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AsideComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

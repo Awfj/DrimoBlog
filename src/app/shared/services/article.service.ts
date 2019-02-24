@@ -1,8 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Article } from "../models/article";
 import { Observable, of } from "rxjs";
-import { catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -13,22 +12,18 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<Article[]> {
-    return this.http
-      .get<Article[]>(this.articlesUrl)
-      .pipe(catchError(this.handleError("getArticles", [])));
+    return this.http.get<Article[]>(this.articlesUrl);
   }
 
   getArticle(id: number): Observable<Article> {
     const url = `${this.articlesUrl}/${id}`;
-    return this.http
-      .get<Article>(url)
-      .pipe(catchError(this.handleError<Article>(`getArticle id=${id}`)));
+    return this.http.get<Article>(url);
   }
 
-  private handleError<T>(operation = "operation", result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      return of(result as T);
-    };
+  searchArticles(term: string): Observable<Article[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Article[]>(`${this.articlesUrl}/?title=${term}`);
   }
 }
