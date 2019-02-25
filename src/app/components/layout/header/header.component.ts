@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from "@angular/core";
 // import { trigger, state, style, animate, transition } from '@angular/animations';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: "app-header",
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
   desktop: boolean;
   isMenuOpen: boolean = false;
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
+
   ngOnInit() {
     this.checkWindowInnerWidth();
   }
@@ -49,5 +51,9 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu():void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

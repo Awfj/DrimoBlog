@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './components/pages/page-not-found/page-no
 import { AsideComponent } from './components/layout/aside/aside.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { SignInComponent } from './components/pages/sign-in/sign-in.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SignInComponent } from './components/pages/sign-in/sign-in.component';
     PageNotFoundComponent,
     AsideComponent,
     FooterComponent,
-    SignInComponent
+    SignInComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

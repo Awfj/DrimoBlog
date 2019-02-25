@@ -12,7 +12,6 @@ import { ArticleService } from '../../../shared/services/article.service';
 export class AsideComponent implements OnInit {
   articles$: Observable<Article[]>;
   private searchTerms = new Subject<string>();
-  // test: boolean;
   
   constructor(private articleService: ArticleService) { }
 
@@ -28,7 +27,4 @@ export class AsideComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
-  // findArticles(): void {
-  //   this.test = !this.test;
-  // }
 }
