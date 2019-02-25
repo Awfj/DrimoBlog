@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  page: number = 1;
   articles: Article[] = [];
   subscription: Subscription;
 
@@ -16,7 +17,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getArticles();
-    // this.searchArticles();
   }
 
   ngOnDestroy(): void {

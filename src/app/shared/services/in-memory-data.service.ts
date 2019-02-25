@@ -35,6 +35,34 @@ export class InMemoryDataService implements InMemoryDbService {
         likes: 10,
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
+      },
+      {
+        id: 11,
+        image: {
+          path: "../../assets/images/articles/blog-ms-1.jpg",
+          width: 358,
+          height: 243
+        },
+        title: "3We Develop A New Features For Newcomers",
+        author: "Shabuj Khan",
+        date: "10 Jan, 2017",
+        likes: 10,
+        preview:
+          "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
+      },
+      {
+        id: 12,
+        image: {
+          path: "../../assets/images/articles/blog-ms-2.jpg",
+          width: 358,
+          height: 243
+        },
+        title: "4We Develop A New Features For Newcomers",
+        author: "Shabuj Khan",
+        date: "10 Jan, 2017",
+        likes: 10,
+        preview:
+          "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
       }
     ];
     return { articles };
