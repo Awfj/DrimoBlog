@@ -43,6 +43,12 @@ ul {
   background-color: red;
 }
 
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 router-outlet ~ * {
   display: grid;
   // position: absolute;

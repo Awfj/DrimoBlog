@@ -1,7 +1,7 @@
 <app-header></app-header>
 
-<main>
-  <div class="wrapper" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+<main class="wrapper">
+  <div [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
   

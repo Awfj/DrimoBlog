@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'; 
-import { Article } from '../../shared/models/article';
-import { ArticleService } from '../../shared/services/article.service';
+import { Article } from '../../../shared/models/article';
+import { ArticleService } from '../../../shared/services/article.service';
 
 @Component({
   selector: 'app-aside',

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
-import { Article } from "../../shared/models/article";
-import { ArticleService } from "../../shared/services/article.service";
+import { Article } from "../../../shared/models/article";
+import { ArticleService } from "../../../shared/services/article.service";
 
 @Component({
   selector: "app-article-details",

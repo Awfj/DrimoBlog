@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Article } from '../../shared/models/article';
-import { ArticleService } from '../../shared/services/article.service';
+import { Article } from '../../../shared/models/article';
+import { ArticleService } from '../../../shared/services/article.service';
 import { Subscription } from 'rxjs';
 
 @Component({

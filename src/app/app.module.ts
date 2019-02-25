@@ -12,14 +12,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header/header.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignUpComponent } from './components/pages/sign-up/sign-up.component';
 import { IdenticalPasswordsDirective } from './shared/directives/identical-passwords.directive';
-import { HomeComponent } from './components/home/home.component';
-import { ArticleDetailsComponent } from './components/article-details/article-details.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { AsideComponent } from './components/aside/aside.component';
-import { ArticleComponent } from './components/article/article.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { ArticleDetailsComponent } from './components/pages/article-details/article-details.component';
+import { PageNotFoundComponent } from './components/pages/page-not-found/page-not-found.component';
+import { AsideComponent } from './components/layout/aside/aside.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
+import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { FooterComponent } from './components/layout/footer/footer.component';
     ArticleDetailsComponent,
     PageNotFoundComponent,
     AsideComponent,
-    ArticleComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
