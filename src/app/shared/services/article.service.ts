@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Article } from "../models/article";
-import { Observable, of } from "rxjs";
+import { Observable, of, Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -9,6 +9,11 @@ import { Observable, of } from "rxjs";
 export class ArticleService {
   private articlesUrl = "api/articles";
 
+
+  private termStringSource = new Subject<string>();
+  termString$ = this.termStringSource.asObservable();
+  
+  
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<Article[]> {
@@ -20,10 +25,15 @@ export class ArticleService {
     return this.http.get<Article>(url);
   }
 
-  searchArticles(term: string): Observable<Article[]> {
-    if (!term.trim()) {
+  searchArticles(searchTerm: string): Observable<Article[]> {
+    if (!searchTerm.trim()) {
       return of([]);
     }
-    return this.http.get<Article[]>(`${this.articlesUrl}/?title=${term}`);
+    return this.http.get<Article[]>(`${this.articlesUrl}/?title=${searchTerm}`);
+  }
+
+  
+  sendSearchTerm(searchTerm: string) {
+    this.termStringSource.next(searchTerm);
   }
 }

@@ -18,7 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "We Develop A New Features For Newcomers",
         author: "Shabuj Khan",
         date: "10 Jan, 2017",
-        likes: 10,
+        likes: 21,
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
       },
@@ -32,7 +32,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "We Develop A New Features For Newcomers",
         author: "Shabuj Khan",
         date: "10 Jan, 2017",
-        likes: 10,
+        likes: 12,
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
       },
@@ -46,7 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "3We Develop A New Features For Newcomers",
         author: "Shabuj Khan",
         date: "10 Jan, 2017",
-        likes: 10,
+        likes: 13,
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
       },
@@ -60,7 +60,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "4We Develop A New Features For Newcomers",
         author: "Shabuj Khan",
         date: "10 Jan, 2017",
-        likes: 10,
+        likes: 14,
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
       }

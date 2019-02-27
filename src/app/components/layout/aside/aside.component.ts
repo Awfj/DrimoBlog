@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators'; 
+import { Router } from '@angular/router';
 import { Article } from '../../../shared/models/article';
 import { ArticleService } from '../../../shared/services/article.service';
 
@@ -10,21 +9,26 @@ import { ArticleService } from '../../../shared/services/article.service';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent implements OnInit {
-  articles$: Observable<Article[]>;
-  private searchTerms = new Subject<string>();
+    
+  constructor(private articleService: ArticleService, private router: Router) { }
+
+  ngOnInit() {
+  }
+
+  search(searchTerm: string) {
+    if (searchTerm) {
+      this.router.navigate(["/search-results"]);
+      this.articleService.sendSearchTerm(searchTerm);
+      // this.articleService.searchArticles(searchTerm)
+      //   .subscribe(articles => this.articles = articles);
+    }
+  }
   
-  constructor(private articleService: ArticleService) { }
-
-  ngOnInit(): void {
-    this.articles$ = this.searchTerms.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.articleService.searchArticles(term))
-    );
-  }
-
-  search(term: string): void {
-    this.searchTerms.next(term);
-  }
-
+  // search(searchTerm: string) {
+  //   if (searchTerm) {
+  //     this.router.navigate(["/search-results"]);
+  //     this.articleService.searchArticles(searchTerm)
+  //       .subscribe(articles => this.articles = articles);
+  //   }
+  // }
 }

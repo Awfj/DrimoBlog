@@ -1,9 +1,10 @@
 <section>
   <h3>Search!</h3>
   <hr>
-  <input #searchBox (input)="search(searchBox.value)" type="text" placeholder="Find an article">
+  <input #searchBox type="text" placeholder="Find an article">
+  <button type="button" (click)="search(searchBox.value)">Search</button>
   <ul>
-    <li *ngFor="let article of articles$ | async">
+    <li *ngFor="let article of articles">
       <a routerLink="/details/{{article.id}}">{{article.title}}</a>
     </li>
   </ul>
