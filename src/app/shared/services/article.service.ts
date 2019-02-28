@@ -10,8 +10,14 @@ export class ArticleService {
   private articlesUrl = "api/articles";
 
 
-  private termStringSource = new Subject<string>();
-  termString$ = this.termStringSource.asObservable();
+  private searchTermSource = new Subject<string>();
+  termString$ = this.searchTermSource.asObservable();
+  
+  private searchAuthorSource = new Subject<string>();
+  authorString$ = this.searchAuthorSource.asObservable();
+  
+  private searchDateSource = new Subject<string>();
+  dateString$ = this.searchDateSource.asObservable();
   
   
   constructor(private http: HttpClient) {}
@@ -32,8 +38,23 @@ export class ArticleService {
     return this.http.get<Article[]>(`${this.articlesUrl}/?title=${searchTerm}`);
   }
 
-  
   sendSearchTerm(searchTerm: string) {
-    this.termStringSource.next(searchTerm);
+    this.searchTermSource.next(searchTerm);
+  }
+
+  searchByAuthor(author: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.articlesUrl}/?author=${author}`)
+  }
+
+  sendAuthor(author: string) {
+    this.searchAuthorSource.next(author);
+  }
+
+  searchByDate(date: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.articlesUrl}/?date=${date}`)
+  }
+
+  sendDate(date: string) {
+    this.searchDateSource.next(date);
   }
 }

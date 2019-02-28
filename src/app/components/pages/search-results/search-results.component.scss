@@ -1,0 +1,37 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.articles {
+  display: grid;
+  justify-items: center;
+  grid-gap: 2em;
+  article {
+    border: 1px solid #000;
+    padding: 4px;
+    max-width: 368px;
+  }
+  .article__info {
+    display: grid;
+    padding: 1em .5em 1em;
+  }
+}
+
+p {
+  margin-top: 1em;
+}
+
+a {
+  margin-top: 1em;
+  justify-self: start;
+  border: 1px solid #000;
+  padding: .5em 1em;
+}
+
+@media (min-width: 768px) {
+  .articles {
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+  }
+}

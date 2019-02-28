@@ -10,6 +10,7 @@ import { ArticleService } from '../../../shared/services/article.service';
 export class HomeComponent implements OnInit {
   page: number = 1;
   articles: Article[] = [];
+  showPagination: boolean = false;
 
   constructor(private articleService: ArticleService) { }
 
@@ -19,6 +20,13 @@ export class HomeComponent implements OnInit {
 
   getArticles(): void {
     this.articleService.getArticles()
-      .subscribe(articles => this.articles = articles);
+      .subscribe(articles => {
+        this.articles = articles;
+        if (this.articles.length > 2) {
+          this.showPagination = true;
+        } else {
+          this.showPagination = false;
+        }
+      });
   }
 }

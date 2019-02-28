@@ -1,10 +1,16 @@
-<p>
-  search-results works!
-</p>
-<ul>
-  <li *ngFor="let article of articles">
-    <a routerLink="/details/{{article.id}}">{{article.title}}</a>
-  </li>
-</ul>
-
-{{term}}
+<div class="articles">
+  <article *ngFor="let article of articles | paginate: { itemsPerPage: 2, currentPage: page }">
+    <img
+      src="{{ article.image.path }}"
+      alt=""
+      width="{{ article.image.width }}"
+      height="{{ article.image.height }}"
+    />
+    <div class="article__info">
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.preview }}</p>
+      <a routerLink="/details/{{ article.id }}">Read More</a>
+    </div>
+  </article>
+  <pagination-controls *ngIf="showPagination" (pageChange)="page = $event"></pagination-controls>
+</div>

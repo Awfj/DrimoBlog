@@ -1,0 +1,17 @@
+<section>
+  <h3>Recent Post</h3>
+  <hr>
+
+  <article *ngFor="let article of articles | slice:-3">
+    <a class="title" routerLink="/details/{{article.id}}">{{article.title}}</a>
+
+    <span (click)="searchByAuthor(author.id)">
+      <a #author id="{{article.author}}" routerLink="/search-results">{{article.author}}</a>
+    </span>
+
+    <span (click)="searchByDate(date.id)">
+      <a #date id="{{article.date}}" routerLink="/search-results">{{article.date}}</a>
+    </span>
+  </article>
+
+</section>

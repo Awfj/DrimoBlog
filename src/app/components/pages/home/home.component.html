@@ -12,5 +12,5 @@
       <a routerLink="/details/{{ article.id }}">Read More</a>
     </div>
   </article>
-  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  <pagination-controls *ngIf="showPagination" (pageChange)="page = $event"></pagination-controls>
 </div>

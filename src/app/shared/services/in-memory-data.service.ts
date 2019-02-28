@@ -31,34 +31,34 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         title: "We Develop A New Features For Newcomers",
         author: "Shabuj Khan",
-        date: "10 Jan, 2017",
+        date: "13 Jan, 2017",
         likes: 12,
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
       },
       {
-        id: 11,
+        id: 13,
         image: {
           path: "../../assets/images/articles/blog-ms-1.jpg",
           width: 358,
           height: 243
         },
         title: "3We Develop A New Features For Newcomers",
-        author: "Shabuj Khan",
-        date: "10 Jan, 2017",
+        author: "3Shabuj Khan",
+        date: "13 Jan, 2017",
         likes: 13,
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
       },
       {
-        id: 12,
+        id: 14,
         image: {
           path: "../../assets/images/articles/blog-ms-2.jpg",
           width: 358,
           height: 243
         },
         title: "4We Develop A New Features For Newcomers",
-        author: "Shabuj Khan",
+        author: "4Shabuj Khan",
         date: "10 Jan, 2017",
         likes: 14,
         preview:
