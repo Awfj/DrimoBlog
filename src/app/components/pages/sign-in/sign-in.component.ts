@@ -38,8 +38,6 @@ export class SignInComponent implements OnInit {
   onSubmit() {}
   
   login() {
-    this.message = 'Trying to log in';
-
     this.authService.login().subscribe(() => {
       if (this.authService.isLoggedIn) {
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/home';

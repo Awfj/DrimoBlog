@@ -21,6 +21,9 @@ import { AsideComponent } from './components/layout/aside/aside.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { SignInComponent } from './components/pages/sign-in/sign-in.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { SearchResultsComponent } from './components/pages/search-results/search-results.component';
+import { RecentPostComponent } from './components/layout/recent-post/recent-post.component';
+import { SearchComponent } from './components/layout/search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
     AsideComponent,
     FooterComponent,
     SignInComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchResultsComponent,
+    RecentPostComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

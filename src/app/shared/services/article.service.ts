@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Article } from "../models/article";
-import { Observable, of } from "rxjs";
+import { Observable, of, Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -9,6 +9,17 @@ import { Observable, of } from "rxjs";
 export class ArticleService {
   private articlesUrl = "api/articles";
 
+
+  private searchTermSource = new Subject<string>();
+  termString$ = this.searchTermSource.asObservable();
+  
+  private searchAuthorSource = new Subject<string>();
+  authorString$ = this.searchAuthorSource.asObservable();
+  
+  private searchDateSource = new Subject<string>();
+  dateString$ = this.searchDateSource.asObservable();
+  
+  
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<Article[]> {
@@ -20,10 +31,30 @@ export class ArticleService {
     return this.http.get<Article>(url);
   }
 
-  searchArticles(term: string): Observable<Article[]> {
-    if (!term.trim()) {
+  searchArticles(searchTerm: string): Observable<Article[]> {
+    if (!searchTerm.trim()) {
       return of([]);
     }
-    return this.http.get<Article[]>(`${this.articlesUrl}/?title=${term}`);
+    return this.http.get<Article[]>(`${this.articlesUrl}/?title=${searchTerm}`);
+  }
+
+  sendSearchTerm(searchTerm: string) {
+    this.searchTermSource.next(searchTerm);
+  }
+
+  searchByAuthor(author: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.articlesUrl}/?author=${author}`)
+  }
+
+  sendAuthor(author: string) {
+    this.searchAuthorSource.next(author);
+  }
+
+  searchByDate(date: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.articlesUrl}/?date=${date}`)
+  }
+
+  sendDate(date: string) {
+    this.searchDateSource.next(date);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from "@angular/core";
 // import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { AuthService } from '../../../auth/auth.service';
 
@@ -15,7 +16,7 @@ export class HeaderComponent implements OnInit {
   desktop: boolean;
   isMenuOpen: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.checkWindowInnerWidth();
@@ -55,5 +56,8 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    if (this.router.isActive("/profile", true)) {
+      this.router.navigate(["/home"]);
+    }
   }
 }
