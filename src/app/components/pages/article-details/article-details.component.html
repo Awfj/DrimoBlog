@@ -6,6 +6,11 @@
     width="{{ article.image.width }}"
     height="{{ article.image.height }}"
   />
+  <span>
+    <p #test id="test" (click)="like()">{{ article.likes}}</p>
+  </span>
+  <p (click)="edit(article)">Edit</p>
   <p>{{ article.preview }}</p>
   <button type="button" (click)="goBack()">Go Back</button>
 </article>
+<p (click)="test()">Push</p>

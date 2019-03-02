@@ -10,7 +10,8 @@ import { ArticleService } from "../../../shared/services/article.service";
   styleUrls: ["./article-details.component.scss"]
 })
 export class ArticleDetailsComponent implements OnInit, DoCheck {
-  @Input() article: Article;
+  article: Article;
+  updArticle: Article;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,6 +21,7 @@ export class ArticleDetailsComponent implements OnInit, DoCheck {
 
   ngOnInit() {
     // this.getArticle();
+    // this.test();
   }
 
   ngDoCheck() {
@@ -30,9 +32,47 @@ export class ArticleDetailsComponent implements OnInit, DoCheck {
     const id = +this.route.snapshot.paramMap.get("id");
     this.articleService.getArticle(id)
       .subscribe(article => this.article = article);
+    
   }
+
+  edit(article) {
+    this.updArticle = article;
+  }
+
+  like() {
+    if (this.updArticle) {
+      this.articleService.updateArticle(this.updArticle).subscribe(articles => console.log(articles));
+    } else {
+      console.log('Oops')
+    }
+    // this.articleService.test().subscribe(as => console.log(as))
+    // console.log(this.updArticle)
+  }
+
+  // update() {
+  //   this.articleService.likes(this.updatedLikes).subscribe(tst => console.log(tst))
+  // }
+
+  // likeT(likes: number) {
+  //   this.updatedLikes = +likes + 1;
+  //   // console.log(this.updatedLikes);
+  //   // console.log(typeof this.updatedLikes);
+
+  //   this.articleService.sendLikes(this.updatedLikes);
+
+  // }
 
   goBack(): void {
     this.location.back();
+  }
+
+  
+  test() {
+    // this.articleService.test().subscribe((as) => console.log(as))
+    // this.articleService.test();
+    let a = document.querySelector('#test').textContent = '1';
+    // let b = +a + 1;
+
+    // console.log(typeof b)
   }
 }

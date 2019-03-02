@@ -18,7 +18,8 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit() {
     this.showSearchResults();
     this.showArticlesByAuthor();
-    this.showArticlesByDate();
+    this.showArticlesWithDate();
+    this.showArticlesWithCategory();
   }
 
   showSearchResults() {
@@ -39,10 +40,20 @@ export class SearchResultsComponent implements OnInit {
     });
   }
 
-  showArticlesByDate() {
+  showArticlesWithDate() {
     this.articleService.dateString$.subscribe(date => {
       this.articleService.searchByDate(date).subscribe(articles => {
         this.articles = articles;
+        this.togglePagination();
+      });
+    });
+  }
+
+  showArticlesWithCategory() {
+    this.articleService.categoryString$.subscribe(category => {
+      this.articleService.searchByCategory(category).subscribe(articles => {
+        this.articles = articles;
+        // console.log(articles.length)
         this.togglePagination();
       });
     });
@@ -55,5 +66,4 @@ export class SearchResultsComponent implements OnInit {
       this.showPagination = false;
     }
   }
-
 }

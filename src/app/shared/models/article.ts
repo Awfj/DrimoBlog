@@ -4,6 +4,6 @@ export class Article {
   title: string;
   author: string;
   date: string;
-  likes: number;
+  likes: string;
   preview: string;
 }

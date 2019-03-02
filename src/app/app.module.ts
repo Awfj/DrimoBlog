@@ -24,6 +24,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { SearchResultsComponent } from './components/pages/search-results/search-results.component';
 import { RecentPostComponent } from './components/layout/recent-post/recent-post.component';
 import { SearchComponent } from './components/layout/search/search.component';
+import { CategoriesComponent } from './components/layout/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -40,15 +41,16 @@ import { SearchComponent } from './components/layout/search/search.component';
     ProfileComponent,
     SearchResultsComponent,
     RecentPostComponent,
-    SearchComponent
+    SearchComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
     FontAwesomeModule,
+    AppRoutingModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
     }),

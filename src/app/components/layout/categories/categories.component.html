@@ -1,0 +1,19 @@
+<section>
+  <h3>Categories</h3>
+  <hr>
+
+  <!-- <ul>
+    <li *ngFor="let category of categories">{{category}}</li>
+  </ul> -->
+
+  <div class="categories">
+    <div class="category" *ngFor="let category of categories">
+      <span (click)="searchByCategory(name.id)">
+        <a #name id="{{category.name}}" class="name" routerLink="/search-results">{{category.name}}</a>
+      </span>
+      <span (click)="searchByCategory(name.id)">
+        <a class="number" routerLink="/search-results">{{category.sum}}</a>
+      </span>
+    </div>
+  </div>
+</section>
