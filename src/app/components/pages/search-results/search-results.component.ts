@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Article } from "../../../shared/models/article";
 import { ArticleService } from "../../../shared/services/article.service";
+import { Observable } from "rxjs";
+import { switchMap } from "rxjs/operators";
 
 @Component({
   selector: "app-search-results",
@@ -10,6 +12,7 @@ import { ArticleService } from "../../../shared/services/article.service";
 export class SearchResultsComponent implements OnInit {
   page: number;
   articles: Article[];
+  articles$: Observable<Article[]>;
   article: Article;
   showPagination: boolean = false;
 
@@ -22,12 +25,25 @@ export class SearchResultsComponent implements OnInit {
     this.showArticlesWithCategory();
   }
 
+  // showSearchResults() {
+  //   this.articleService.termString$.subscribe(searchTerm => {
+  //     this.articleService.searchArticles(searchTerm).subscribe(articles => {
+  //       this.articles = articles;
+  //       this.togglePagination();
+  //     });
+  //   });
+  // }
+
   showSearchResults() {
-    this.articleService.termString$.subscribe(searchTerm => {
-      this.articleService.searchArticles(searchTerm).subscribe(articles => {
-        this.articles = articles;
-        this.togglePagination();
-      });
+    this.articles$ = this.articleService.termString$.pipe(
+      switchMap((term: string) => this.articleService.searchArticles(term))
+    );
+    this.articles$.subscribe(articles => {
+      if (articles.length > 2) {
+        this.showPagination = true;
+      } else {
+        this.showPagination = false;
+      }
     });
   }
 

@@ -1,16 +1,20 @@
+@import "../../../../variables.scss";
+
+header {
+  background-color: $header-color;
+  padding: 1em 0;
+}
+
 .wrapper {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  border: 1px solid red;
 }
 
 .logo {
   display: block;
   justify-self: start;
-  margin-top: .7em;
-  margin-bottom: .7em;
   svg {
     width: 111px;
     height: 40px;
@@ -20,7 +24,6 @@
 
 .btnHiddenMenu {
   justify-self: end;
-  border: 1px solid #000;
 }
 
 .showHiddenMenu {
@@ -33,19 +36,20 @@ nav {
   position: absolute;
   top: 100%;
   width: 100%;
-  background-color: white;
   z-index: 1;
-  border: 1px solid #000;
   text-align: center;
-  // padding: 1em 0;
+  background-color: $white-color;
+  // box-shadow: 0 3px 20px black;
   a {
-    // border: 1px solid red;
     justify-self: stretch;
     padding: 1em;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    color: $font-color;
+    border-bottom: 1px solid $font-color;
   }
-  a:not(:last-child) {
-    border: 1px solid red;
+  .active {
+    color: $primary-color;
   }
 }
 
@@ -55,21 +59,12 @@ nav {
   }
 }
 
-div {
-  border: 1px solid red;
-}
-p {
-  border: 1px solid #000;
-}
-
 @media (min-width: 768px) {
   header {
-    align-items: center;
+    padding: 0;
   }
   .logo {
     justify-self: start;
-    margin-top: 0;
-    margin-bottom: 0;
   }
   nav {
     justify-self: end;
@@ -77,14 +72,18 @@ p {
     position: relative;
     top: initial;
     width: initial;
+    background-color: initial;
     a {
-      border: 1px solid red;
+      border-bottom: none;
+      font-size: .9rem;
+      padding: 2.3em;
     }
   }
-}
+  .active {
+    border-top: 2px solid $primary-color;
+  }
 
-@media (min-width: 1172px) {
-  .wrapper {
-    padding: 0;
+  a:not(.active):not(.logo) {
+    margin-top: 2px;
   }
 }

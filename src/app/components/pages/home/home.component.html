@@ -1,11 +1,12 @@
 <div class="articles">
   <article *ngFor="let article of articles | paginate: { itemsPerPage: 2, currentPage: page }">
     <img
-      src="{{ article.image.path }}"
-      alt=""
-      width="{{ article.image.width }}"
-      height="{{ article.image.height }}"
+      [src]="article.image.path"
+      [alt]=""
+      [width]="article.image.width"
+      [height]="article.image.height"
     />
+    <p>{{ article.likes }}</p>
     <div class="article__info">
       <h2>{{ article.title }}</h2>
       <p>{{ article.preview }}</p>

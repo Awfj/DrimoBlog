@@ -1,0 +1,115 @@
+@import '../../../../variables.scss';
+
+section {
+  padding: 2em 0;
+  background-color: $header-color;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.heading {
+  svg {
+    width: 92px;
+    height: 75px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  h3 {
+    margin: .4em 0 .7em;
+    color: $primary-color;
+    font-size: 2rem;
+    font-family: heebo, sans-serif;
+    span {
+      font-weight: normal;
+      color: $footer-color;
+    }
+  }
+}
+
+form {
+  display: grid;
+  input, button {
+    font-size: 0.875rem;
+  }
+  input {
+    border: none;
+    border-radius: 1.875em 1.875em 0 0;
+    padding: 1em 2em;
+  }
+  input::placeholder {
+    color: rgba($font-color, .7);
+  }
+  button {
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 1em 2em;
+    border-radius: 0 0 1.875em 1.875em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 500px) {
+  section {
+    padding: 3em 0;
+  }
+  .heading {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    grid-column-gap: 1em;
+    margin-bottom: 1.5em;
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .wrapper {
+    grid-template-columns: auto 1fr;
+  }
+  .heading {
+    margin-bottom: 0;
+    justify-self: start;
+  }
+  form {
+    justify-self: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading {
+    h3 {
+      font-size: 2.375rem;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  form {
+    justify-self: center;
+    display: initial;
+    input {
+      width: 250px;
+      border-radius: 1.875em 0 0 1.875em;
+    } button {
+      border-radius: 0 1.875em 1.875em 0;
+    }
+  }
+}
+
+@media (min-width: 1172px) {
+  form {
+    justify-self: end;
+    input {
+      width: 420px;
+    }
+  }
+}

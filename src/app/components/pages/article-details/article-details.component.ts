@@ -20,12 +20,12 @@ export class ArticleDetailsComponent implements OnInit, DoCheck {
   ) {}
 
   ngOnInit() {
-    // this.getArticle();
+    this.getArticle();
     // this.test();
   }
 
   ngDoCheck() {
-    this.getArticle();
+    // this.getArticle();
   }
 
   getArticle(): void {
@@ -41,7 +41,7 @@ export class ArticleDetailsComponent implements OnInit, DoCheck {
 
   like() {
     if (this.updArticle) {
-      this.articleService.updateArticle(this.updArticle).subscribe(articles => console.log(articles));
+      this.articleService.updateArticle(this.updArticle).subscribe(articles => console.log(this.updArticle));
     } else {
       console.log('Oops')
     }
@@ -74,5 +74,9 @@ export class ArticleDetailsComponent implements OnInit, DoCheck {
     // let b = +a + 1;
 
     // console.log(typeof b)
+  }
+
+  save():void {
+    this.articleService.upd(this.article).subscribe(() => console.log(this.article));
   }
 }

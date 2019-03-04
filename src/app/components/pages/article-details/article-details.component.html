@@ -1,14 +1,17 @@
 <article *ngIf="article">
   <h2>{{ article.title }}</h2>
   <img
-    src="{{ article.image.path }}"
-    alt=""
-    width="{{ article.image.width }}"
-    height="{{ article.image.height }}"
+    [src]="article.image.path"
+    [alt]=""
+    [width]="article.image.width"
+    [height]="article.image.height"
   />
   <span>
-    <p #test id="test" (click)="like()">{{ article.likes}}</p>
+    <!-- <p #test id="test" (click)="like()">{{ article.likes}}</p> -->
   </span>
+  <button (click)="save()">Save</button>
+  <!-- <p #test id="test" (click)="like()">{{ article.likes}}</p> -->
+  <input [(ngModel)]='article.likes'>
   <p (click)="edit(article)">Edit</p>
   <p>{{ article.preview }}</p>
   <button type="button" (click)="goBack()">Go Back</button>

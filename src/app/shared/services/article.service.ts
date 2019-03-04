@@ -1,9 +1,13 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Article } from "../models/article";
 import { Category } from "../models/category";
 import { Observable, of, Subject } from "rxjs";
+import { catchError, map, tap } from "rxjs/operators";
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: "root"
@@ -13,7 +17,7 @@ export class ArticleService {
   private categoriesUrl = "api/categories";
 
   private searchTermSource = new Subject<string>();
-  termString$ = this.searchTermSource.asObservable();
+  termString$ = this.searchTermSource;
   
   private authorSource = new Subject<string>();
   authorString$ = this.authorSource.asObservable();
@@ -31,20 +35,34 @@ export class ArticleService {
   
   constructor(private http: HttpClient) {}
 
+  private handleError<T>(result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    }
+  }
+  
   getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.articlesUrl);
+    return this.http.get<Article[]>(this.articlesUrl)
+      .pipe(
+        catchError(this.handleError([]))
+      );
   }
 
   getArticle(id: number): Observable<Article> {
     const url = `${this.articlesUrl}/${id}`;
-    return this.http.get<Article>(url);
+    return this.http.get<Article>(url).pipe(
+      catchError(this.handleError<Article>())
+    );
   }
 
   searchArticles(searchTerm: string): Observable<Article[]> {
     if (!searchTerm.trim()) {
       return of([]);
     }
-    return this.http.get<Article[]>(`${this.articlesUrl}/?title=${searchTerm}`);
+    return this.http.get<Article[]>(`${this.articlesUrl}/?title=${searchTerm}`).pipe(
+      catchError(this.handleError<Article[]>([]))
+    );
   }
 
   sendSearchTerm(searchTerm: string) {
@@ -106,4 +124,10 @@ export class ArticleService {
   // likes(likes: Article): Observable<Article> {
   //   return this.http.put<Article>(this.articlesUrl, likes, httpOptions);
   // }
+
+  upd(article: Article): Observable<any> {
+    return this.http.put(this.articlesUrl, article, httpOptions).pipe(
+      catchError(this.handleError<any>())
+    );
+  }
 }

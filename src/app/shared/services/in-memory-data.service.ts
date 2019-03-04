@@ -18,7 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "We Develop A New Features For Newcomers",
         author: "Shabuj Khan",
         date: "10 Jan, 2017",
-        likes: '21',
+        likes: 21,
         category: 'PC',
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
@@ -33,7 +33,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "We Develop A New Features For Newcomers",
         author: "Shabuj Khan",
         date: "13 Jan, 2017",
-        likes: '12',
+        likes: 12,
         category: 'Creative',
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
@@ -48,7 +48,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "3We Develop A New Features For Newcomers",
         author: "3Shabuj Khan",
         date: "13 Jan, 2017",
-        likes: '13',
+        likes: 13,
         category: 'PC',
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
@@ -63,7 +63,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: "4We Develop A New Features For Newcomers",
         author: "4Shabuj Khan",
         date: "10 Jan, 2017",
-        likes: '14',
+        likes: 14,
         category: 'PC',
         preview:
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Many desktop publishing packages and web page editors now use Lorem Ipsum.."
@@ -73,14 +73,17 @@ export class InMemoryDataService implements InMemoryDbService {
     // const categories = ['PC', 'Mobile Apps', 'Creative']
     const categories = [
       {
+        id: 1,
         name: 'PC',
         sum: 0
       },
       {
+        id: 2,
         name: 'Mobile Apps',
         sum: 0
       },
       {
+        id: 3,
         name: 'Creative',
         sum: 0
       }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }    from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +26,7 @@ import { SearchResultsComponent } from './components/pages/search-results/search
 import { RecentPostComponent } from './components/layout/recent-post/recent-post.component';
 import { SearchComponent } from './components/layout/search/search.component';
 import { CategoriesComponent } from './components/layout/categories/categories.component';
+import { SubscriptionComponent } from './components/layout/subscription/subscription.component';
 
 @NgModule({
   declarations: [
@@ -42,10 +44,12 @@ import { CategoriesComponent } from './components/layout/categories/categories.c
     SearchResultsComponent,
     RecentPostComponent,
     SearchComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    SubscriptionComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FontAwesomeModule,

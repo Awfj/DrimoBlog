@@ -1,10 +1,10 @@
 <div class="articles">
-  <article *ngFor="let article of articles | paginate: { itemsPerPage: 2, currentPage: page }">
+  <article *ngFor="let article of articles$ | async | paginate: { itemsPerPage: 2, currentPage: page }">
     <img
-      src="{{ article.image.path }}"
-      alt=""
-      width="{{ article.image.width }}"
-      height="{{ article.image.height }}"
+      [src]="article.image.path"
+      [alt]=""
+      [width]="article.image.width"
+      [height]="article.image.height"
     />
     <div class="article__info">
       <h2>{{ article.title }}</h2>
@@ -14,3 +14,5 @@
   </article>
   <pagination-controls *ngIf="showPagination" (pageChange)="page = $event"></pagination-controls>
 </div>
+
+<!-- paginate: { itemsPerPage: 2, currentPage: page } -->

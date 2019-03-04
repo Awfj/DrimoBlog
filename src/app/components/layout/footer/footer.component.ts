@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faHeart, faCopyright } from "@fortawesome/free-regular-svg-icons";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookSquare, faVimeoSquare, faTwitterSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookSquare, faTwitterSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +14,6 @@ export class FooterComponent implements OnInit {
   faEnvelope = faEnvelope;
   faPhone = faPhone;
   faFacebookSquare = faFacebookSquare;
-  faVimeoSquare = faVimeoSquare;
   faTwitterSquare = faTwitterSquare;
   faYoutubeSquare = faYoutubeSquare;
 

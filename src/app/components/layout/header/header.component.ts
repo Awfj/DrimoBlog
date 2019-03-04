@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   }
 
   // onResize(event):void {
-  //   if(event.target.innerWidth > 768) {
+  //   if(event.target.innerWidth >= 768) {
   //     this.mobile = false;
   //     this.desktop = true;
   //   } else {
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
   // }
 
   checkInnerWidth() {
-    if(window.innerWidth > 768) {
+    if(window.innerWidth >= 768) {
       this.mobile = false;
       this.desktop = true;
     } else {
