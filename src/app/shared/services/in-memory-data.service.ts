@@ -11,17 +11,17 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 11,
         image: {
-          path: "../../assets/images/articles/blog-ms-1.jpg",
+          path: "./assets/images/articles/blog-ms-1.jpg",
           width: 358,
           height: 243
         },
         imageSmall: {
-          path: "../../assets/images/recent-post/r-p-1.jpg",
+          path: "./assets/images/recent-post/r-p-1.jpg",
           width: 86,
           height: 66
         },
         imageBig: {
-          path: "../../assets/images/single-blog.jpg",
+          path: "./assets/images/single-blog.jpg",
           width: 771,
           height: 358
         },
@@ -36,17 +36,17 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 12,
         image: {
-          path: "../../assets/images/articles/blog-ms-2.jpg",
+          path: "./assets/images/articles/blog-ms-2.jpg",
           width: 358,
           height: 243
         },
         imageSmall: {
-          path: "../../assets/images/recent-post/r-p-1.jpg",
+          path: "./assets/images/recent-post/r-p-1.jpg",
           width: 86,
           height: 66
         },
         imageBig: {
-          path: "../../assets/images/single-blog.jpg",
+          path: "./assets/images/single-blog.jpg",
           width: 771,
           height: 358
         },
@@ -61,17 +61,17 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 13,
         image: {
-          path: "../../assets/images/articles/blog-ms-1.jpg",
+          path: "./assets/images/articles/blog-ms-1.jpg",
           width: 358,
           height: 243
         },
         imageSmall: {
-          path: "../../assets/images/recent-post/r-p-1.jpg",
+          path: "./assets/images/recent-post/r-p-1.jpg",
           width: 86,
           height: 66
         },
         imageBig: {
-          path: "../../assets/images/single-blog.jpg",
+          path: "./assets/images/single-blog.jpg",
           width: 771,
           height: 358
         },
@@ -86,17 +86,17 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 14,
         image: {
-          path: "../../assets/images/articles/blog-ms-2.jpg",
+          path: "./assets/images/articles/blog-ms-2.jpg",
           width: 358,
           height: 243
         },
         imageSmall: {
-          path: "../../assets/images/recent-post/r-p-2.jpg",
+          path: "./assets/images/recent-post/r-p-2.jpg",
           width: 86,
           height: 66
         },
         imageBig: {
-          path: "../../assets/images/single-blog.jpg",
+          path: "./assets/images/single-blog.jpg",
           width: 771,
           height: 358
         },
@@ -111,17 +111,17 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 15,
         image: {
-          path: "../../assets/images/articles/blog-ms-2.jpg",
+          path: "./assets/images/articles/blog-ms-2.jpg",
           width: 358,
           height: 243
         },
         imageSmall: {
-          path: "../../assets/images/recent-post/r-p-3.jpg",
+          path: "./assets/images/recent-post/r-p-3.jpg",
           width: 86,
           height: 66
         },
         imageBig: {
-          path: "../../assets/images/single-blog.jpg",
+          path: "./assets/images/single-blog.jpg",
           width: 771,
           height: 358
         },

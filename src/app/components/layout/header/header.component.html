@@ -1,7 +1,7 @@
 <header (window:resize)="onResize()">
   <div class="wrapper">
     <a routerLink="/home" class="logo">
-      <svg class="icon icon-logo"><use xlink:href="../../../../assets/images/symbol-defs.svg#icon-logo"></use></svg>
+      <svg class="icon icon-logo"><use xlink:href="./assets/images/symbol-defs.svg#icon-logo"></use></svg>
     </a>
     <button class="btnHiddenMenu" *ngIf="mobile" (click)="toggleMenu()" type="button">
       <fa-icon [icon]="faBars" size="2x"></fa-icon>
