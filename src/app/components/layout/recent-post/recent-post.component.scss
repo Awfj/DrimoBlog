@@ -1,9 +1,64 @@
-section {
-  border: 1px solid #000;
-  padding: 1em;
-  margin-top: 1em;
+@import '../../../../variables.scss';
+
+.container {
+  display: grid;
+  grid-gap: 1em;
 }
 
 article {
   display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1em;
+}
+
+.title {
+  color: $color-heading-3;
+  font-weight: bold;
+}
+
+.recent-post__info--aux {
+  display: grid;
+  grid-gap: .5em;
+  margin-top: .5em;
+  fa-icon {
+    font-size: 0.5625rem;
+    color: $color-icon-3;
+    margin-right: .2em;
+    display: inline-block;
+    vertical-align: text-top;
+  }
+  a {
+    font-size: 0.75rem;
+    color: $color-text;
+  }
+}
+
+@media (min-width: 450px) {
+  .recent-post__info--aux {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+@media (min-width: 600px) {
+  .recent-post__info--aux {
+    grid-template-columns: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .recent-post__info--aux {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .recent-post__info--aux {
+    grid-template-columns: auto;
+  }
+}
+
+@media (min-width: 1172px) {
+  .recent-post__info--aux {
+    grid-template-columns: auto 1fr;
+  }
 }

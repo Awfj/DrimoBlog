@@ -1,7 +1,6 @@
 <header (window:resize)="onResize()">
   <div class="wrapper">
     <a routerLink="/home" class="logo">
-      <!-- <img src="../../../../assets/images/logo.png" alt="Drimo" /> -->
       <svg class="icon icon-logo"><use xlink:href="../../../../assets/images/symbol-defs.svg#icon-logo"></use></svg>
     </a>
     <button class="btnHiddenMenu" *ngIf="mobile" (click)="toggleMenu()" type="button">
@@ -11,8 +10,8 @@
     <nav [class.desktop]="desktop" *ngIf="isMenuOpen || desktop">
       <a routerLink="/home" routerLinkActive="active">Home</a>
       <a routerLink="/sign-in" routerLinkActive="active" *ngIf="!authService.isLoggedIn">Sign In</a>
-      <a routerLink="/sign-up" routerLinkActive="active" *ngIf="!authService.isLoggedIn">Sign Up</a>
-      <a routerLink="/profile" routerLinkActive="active" *ngIf="authService.isLoggedIn">Profile</a>
+      <!-- <a routerLink="/sign-up" routerLinkActive="active" *ngIf="!authService.isLoggedIn">Sign Up</a> -->
+      <!-- <a routerLink="/profile" routerLinkActive="active" *ngIf="authService.isLoggedIn">Profile</a> -->
       <a (click)="logout()" *ngIf="authService.isLoggedIn">Sign Out</a>
     </nav>
   </div>

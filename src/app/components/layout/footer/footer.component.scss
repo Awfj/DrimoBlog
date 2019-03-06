@@ -1,7 +1,7 @@
 @import '../../../../variables.scss';
 
 footer {
-  background-color: $footer-color;
+  background-color: $bg-color-footer;
   color: $font-color;
   padding: 2.5em 0 2em;
 }
@@ -22,7 +22,6 @@ footer {
   svg {
     width: 80px;
     height: 24px;
-    display: block;
   }
   p {
     font-size: 1rem;
@@ -36,23 +35,22 @@ nav {
   grid-gap: .5em 2em;
   justify-items: start;
   a {
-    color: $font-color;
+    color: $color-text;
     text-transform: uppercase;
   }
 }
 
 .contact {
   h3 {
-    color: $white-color;
+    color: $color-heading-2;
     text-transform: uppercase;
-    font-size: 1.125rem;
     margin-bottom: 1em;
   }
   ul {
     margin-bottom: 1.5em;
     font-size: 1rem;
     fa-icon {
-      color: $primary-color;
+      color: $color-primary;
       margin-right: .5em;
     }
   }
@@ -67,7 +65,7 @@ nav {
       margin-right: .8em;
     }
     fa-icon {
-      color: $font-color;
+      color: $color-text;
     }
   }
 }
@@ -75,9 +73,9 @@ nav {
 .copyright {
   font-size: 1rem;
   text-align: center;
-  color: #6b6d6f;
+  color: $color-text-3;
   a {
-    color: #2e7aa7;
+    color: $color-link;
   }
 }
 

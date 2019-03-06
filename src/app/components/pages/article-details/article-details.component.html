@@ -1,19 +1,54 @@
 <article *ngIf="article">
   <h2>{{ article.title }}</h2>
+
+  <div class="article__info">
+    <span class="author" (click)="searchByAuthor(author.id)">
+      <a #author id="{{ article.author }}" routerLink="/search-results">
+        <fa-icon [icon]="faUser" size="lg"></fa-icon>
+        By: {{ article.author }}
+      </a>
+    </span>
+
+    <span class="date" (click)="searchByDate(date.id)">
+      <a #date id="{{ article.date }}" routerLink="/search-results">
+        <fa-icon [icon]="faClock" size="lg"></fa-icon>
+        Posted: {{ article.date }}
+      </a>
+    </span>
+    <a class="like">
+      <fa-icon [icon]="faHeart" size="lg"></fa-icon>
+      {{ article.likes }}
+    </a>
+  </div>
+
   <img
-    [src]="article.image.path"
+    [src]="article.imageBig.path"
     [alt]=""
-    [width]="article.image.width"
-    [height]="article.image.height"
+    [width]="article.imageBig.width"
+    [height]="article.imageBig.height"
   />
-  <span>
-    <!-- <p #test id="test" (click)="like()">{{ article.likes}}</p> -->
-  </span>
-  <button (click)="save()">Save</button>
+
+  <div class="aritcle__info--sec">
+    <h4>{{ article.author }}</h4>
+    <div class="category">
+      <h4>Category</h4>
+      <a href="#">{{ article.category }}</a>
+    </div>
+  </div>
+  <!-- <span>
+    <p #test id="test" (click)="like()">{{ article.likes}}</p>
+  </span> -->
+  <!-- <button (click)="save()">Save</button> -->
   <!-- <p #test id="test" (click)="like()">{{ article.likes}}</p> -->
-  <input [(ngModel)]='article.likes'>
-  <p (click)="edit(article)">Edit</p>
+  <!-- <input [(ngModel)]="article.likes" /> -->
+  <!-- <p (click)="edit(article)">Edit</p> -->
+  
   <p>{{ article.preview }}</p>
-  <button type="button" (click)="goBack()">Go Back</button>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis cumque esse sed consectetur ullam consequuntur minus ipsam eum, quia eius dignissimos, similique nisi amet non numquam beatae. Voluptatem, impedit at! lorem</p>
+  <p>Optio eligendi praesentium repellat explicabo cupiditate delectus minus nobis saepe aut pariatur est, labore enim assumenda necessitatibus ab tempore mollitia? Ipsam ad, ratione laudantium perspiciatis aspernatur ipsa! Repellendus, laboriosam at.</p>
+  <p>Vero reprehenderit dignissimos quis deserunt porro voluptas, velit mollitia labore provident assumenda blanditiis! Esse, expedita! Ad, ullam! Porro ea deleniti accusamus. Asperiores, iure magnam obcaecati laboriosam at ducimus veritatis eius.</p>
+  <p>Possimus repudiandae autem voluptatibus commodi quam tempora placeat omnis facere cumque optio reiciendis ut, cupiditate quos doloribus? Quo esse cumque exercitationem ea enim magni consequuntur totam. Dolor quis aspernatur alias?</p>
+  <p>Eius ducimus est harum iste esse atque odio architecto molestias asperiores quos voluptatibus veniam fugit voluptas vitae soluta in, cumque deserunt animi quod fuga? Incidunt non consectetur eveniet doloribus veniam!</p>
+  <!-- <button type="button" (click)="goBack()">Go Back</button> -->
 </article>
-<p (click)="test()">Push</p>
+<!-- <p (click)="test()">Push</p> -->

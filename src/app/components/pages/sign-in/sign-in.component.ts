@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormGroup } from "@angular/forms";
 import { Location } from "@angular/common";
 import { Router, NavigationExtras } from "@angular/router";
 import { AuthService } from "../../../auth/auth.service";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-sign-in",
@@ -10,6 +11,8 @@ import { AuthService } from "../../../auth/auth.service";
   styleUrls: ["./sign-in.component.scss"]
 })
 export class SignInComponent implements OnInit {
+  faHeart = faHeart;
+
   signInForm: FormGroup;
   message: string;
 

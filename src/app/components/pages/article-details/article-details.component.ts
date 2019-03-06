@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Location } from '@angular/common';
 import { Article } from "../../../shared/models/article";
 import { ArticleService } from "../../../shared/services/article.service";
+import { faUser, faClock, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-article-details",
@@ -10,6 +11,10 @@ import { ArticleService } from "../../../shared/services/article.service";
   styleUrls: ["./article-details.component.scss"]
 })
 export class ArticleDetailsComponent implements OnInit, DoCheck {
+  faUser = faUser;
+  faClock = faClock;
+  faHeart = faHeart;
+
   article: Article;
   updArticle: Article;
 
@@ -25,7 +30,7 @@ export class ArticleDetailsComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck() {
-    // this.getArticle();
+    this.getArticle();
   }
 
   getArticle(): void {

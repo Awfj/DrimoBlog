@@ -1,17 +1,32 @@
-<section>
+<section class="aside__section">
   <h3>Recent Post</h3>
-  <hr>
+  <div class="line">
+    <hr />
+  </div>
 
-  <article *ngFor="let article of articles | slice:-3">
-    <a class="title" routerLink="/details/{{article.id}}">{{article.title}}</a>
-
-    <span (click)="searchByAuthor(author.id)">
-      <a #author id="{{article.author}}" routerLink="/search-results">{{article.author}}</a>
-    </span>
-
-    <span (click)="searchByDate(date.id)">
-      <a #date id="{{article.date}}" routerLink="/search-results">{{article.date}}</a>
-    </span>
-  </article>
+  <div class="container">
+    <article *ngFor="let article of articles | slice:-3">
+      <img [src]="article.imageSmall.path" [width]="article.imageSmall.width" [height]="article.imageSmall.height" alt="">
+      <div>
+        <a class="title" routerLink="/details/{{article.id}}">{{article.title}}</a>
+    
+        <!-- <div class="recent-post__info--aux">
+          <span (click)="searchByAuthor(author.id)">
+            <a #author id="{{article.author}}" routerLink="/search-results">
+              <fa-icon [icon]="faUser" size="lg"></fa-icon>
+              {{article.author}}
+            </a>
+          </span>
+      
+          <span (click)="searchByDate(date.id)">
+            <a #date id="{{article.date}}" routerLink="/search-results">
+              <fa-icon [icon]="faClock" size="lg"></fa-icon>
+              {{article.date}}
+            </a>
+          </span>
+        </div> -->
+      </div>
+    </article>
+  </div>
 
 </section>

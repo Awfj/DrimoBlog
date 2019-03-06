@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '../../../shared/models/article';
 import { ArticleService } from '../../../shared/services/article.service';
+import { faUser, faClock } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-recent-post',
@@ -8,7 +9,11 @@ import { ArticleService } from '../../../shared/services/article.service';
   styleUrls: ['./recent-post.component.scss']
 })
 export class RecentPostComponent implements OnInit {
+  faUser = faUser;
+  faClock = faClock;
+  
   articles: Article[] = [];
+  
 
   constructor(private articleService: ArticleService) { }
 
