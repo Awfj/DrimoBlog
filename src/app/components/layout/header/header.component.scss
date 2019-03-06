@@ -1,0 +1,92 @@
+@import "../../../../variables.scss";
+
+header {
+  background-color: $bg-color-header;
+  padding: 1em 0;
+  font-family: poppins, sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  justify-self: start;
+  svg {
+    width: 111px;
+    height: 40px;
+  }
+}
+
+.btnHiddenMenu {
+  justify-self: end;
+}
+
+.showHiddenMenu {
+  display: block;
+}
+
+nav {
+  display: grid;
+  justify-items: center;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  background-color: $bg-color-header;
+  a {
+    justify-self: stretch;
+    padding: 1em;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: $color-text;
+    border-bottom: 1px solid $color-border;
+    transition: .3ms ease-in-out;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  .active {
+    color: $color-primary;
+  }
+}
+
+.desktop {
+  li {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 0;
+  }
+  .logo {
+    justify-self: start;
+  }
+  nav {
+    justify-self: end;
+    grid-auto-flow: column; 
+    position: relative;
+    top: initial;
+    width: initial;
+    background-color: initial;
+    a {
+      border-bottom: none;
+      font-size: .9rem;
+      padding: 2.3em;
+    }
+  }
+  .active {
+    border-top: 2px solid $primary-color;
+  }
+
+  a:not(.active):not(.logo) {
+    margin-top: 2px;
+  }
+}

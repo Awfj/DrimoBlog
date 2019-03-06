@@ -1,0 +1,24 @@
+<div class="articles">
+  <article *ngFor="let article of articles | paginate: { itemsPerPage: 4, currentPage: page }">
+    <img
+      [src]="article.image.path"
+      [alt]=""
+      [width]="article.image.width"
+      [height]="article.image.height"
+    />
+    <div class="article__info">
+      <h3>{{ article.title }}</h3>
+      <!-- <div class="article__info--aux">
+        <a class="author" href="#">By: {{ article.author }}</a>
+        <a class="date" href="#">Posted: {{ article.date }}</a>
+        <a class="like" href="#">
+          <fa-icon [icon]="faHeart" size="lg"></fa-icon>
+          {{ article.likes }}
+        </a>
+      </div> -->
+      <p>{{ article.preview }}</p>
+      <a class="btn" routerLink="/details/{{ article.id }}">Read More</a>
+    </div>
+  </article>
+</div>
+<pagination-controls *ngIf="showPagination" (pageChange)="page = $event"></pagination-controls>

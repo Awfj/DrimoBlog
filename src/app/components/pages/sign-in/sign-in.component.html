@@ -1,0 +1,16 @@
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <button type="button" (click)="goBack()">Go Back</button>
+
+  <!-- <div>
+    <label for="username">Username</label>
+    <input id="username" type="text" formControlName="username" required>
+    
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" required>
+  </div>
+  <p>Don't have an account?
+    <a routerLink="/sign-up">Sign Up</a>
+  </p> -->
+</form>
+
+<button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>

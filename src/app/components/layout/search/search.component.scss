@@ -1,0 +1,44 @@
+@import '../../../../variables.scss';
+
+form {
+  max-width: 300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  input, a {
+    font-size: 0.875rem;
+  }
+  input {
+    padding: 1em 0 1em 1.5em;
+    border: 1px solid $color-border;
+    border-radius: 1.875em 1.875em 0 0;
+    &::placeholder {
+      color: $color-text-4;
+    }
+  }
+  
+  a {
+    display: inline-block;
+    border: 1px solid $color-primary;
+    background-color: $color-primary;
+    color: $color-button;
+    padding: 1em 1.5em;
+    text-transform: uppercase;
+    border-radius: 0 0 1.875em 1.875em;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1172px) {
+  form {
+    grid-template-columns: auto auto;
+    input {
+      border-radius: 1.875em 0 0 1.875em;
+    }
+    a {
+      border-radius: 0 1.875em 1.875em 0;
+    }
+  }
+}

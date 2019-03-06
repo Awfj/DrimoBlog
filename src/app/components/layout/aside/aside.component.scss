@@ -1,0 +1,17 @@
+div {
+  display: grid;
+  grid-gap: 2.3em;
+}
+
+@media (min-width: 600px) {
+  div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  div {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}

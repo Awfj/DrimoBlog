@@ -1,0 +1,14 @@
+<section class="aside__section">
+  <h3>Search!</h3>
+  <div class="line">
+    <hr>
+  </div>
+  <form>
+    <input #searchBox type="text" placeholder="Find an article" />
+    <span (click)="search(searchBox.value)">
+      <a routerLink="/search-results">Search</a>
+    </span>
+  </form>
+  
+
+</section>

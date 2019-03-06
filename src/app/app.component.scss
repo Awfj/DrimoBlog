@@ -1,0 +1,52 @@
+@import "../variables.scss";
+
+.wrapper {
+  display: grid;
+  grid-gap: 2em;
+  margin: 5em auto;
+}
+
+.banner {
+  background-image: url('../assets/images/blog-banner-2.jpg');
+  background-repeat: no-repeat;
+  background-position: 40% center;
+  .banner__content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 100px 16px;
+  }
+  h1 {
+    color: $white-color;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.3em;
+  }
+  span {
+    font-weight: normal;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr auto;
+  }
+  .banner {
+    .banner__content {
+      padding: 130px 16px;
+    }
+    h1 {
+      font-size: 3.2rem;
+    }
+    span {
+      font-size: 3.7rem;
+    }
+  }
+}
+
+@media (min-width: 1172px) {
+  .banner {
+    .banner__content {
+      padding: 130px 0;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../../../variables.scss';
+
+.categories {
+  display: grid;
+  grid-gap: 1.6em;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.name, .number {
+  color: $color-text;
+}
+
+.name {
+  justify-self: start;
+  transition: .3s ease-in-out;
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.number {
+  justify-self: end;
+}
