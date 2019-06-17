@@ -1,4 +1,4 @@
-https://awfj.github.io/DrimoBlog/home
+https://awfj.github.io/DrimoBlog/
 
 # DrimoBlog
 
